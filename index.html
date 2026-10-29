@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hello.chaos.berlin</title>
+<style>
+  :root { --bg: #0b0c0e; --fg: #d7dae0; --muted: #7d8590; --green: #3ddc84; --cyan: #4cc9f0; --amber: #f4b942; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--fg);
+         font: 15px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding: 16px; }
+  main { width: 100%; max-width: 640px; border: 1px solid #2a2e35; border-radius: 6px; overflow: hidden; }
+  header { display: flex; justify-content: space-between; padding: 8px 14px; background: #15171b; color: var(--muted); font-size: 13px; }
+  .log { padding: 18px 14px; }
+  p { margin: 0 0 6px; display: grid; grid-template-columns: 52px 92px 1fr; gap: 8px; }
+  time { color: var(--muted); }
+  .g { color: var(--green); } .c { color: var(--cyan); } .a { color: var(--amber); }
+  h1 { font-size: clamp(28px, 7vw, 44px); margin: 22px 0 6px; letter-spacing: -0.02em; }
+  a { color: var(--cyan); }
+  .cursor::after { content: "▍"; animation: blink 1s steps(1) infinite; color: var(--green); }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (max-width: 480px) { p { grid-template-columns: 44px 1fr; } p time { display: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header><span>#hello</span><span>chaos.berlin</span></header>
+  <div class="log">
+    <p><time>00:00</time><b class="g">hello</b><span>joined the namespace</span></p>
+    <p><time>00:01</time><b class="c">dns</b><span>hello.chaos.berlin → chaosberlin.github.io</span></p>
+    <p><time>00:02</time><b class="a">backend</b><span>record published via pull request</span></p>
+    <h1 class="cursor">hello, world</h1>
+    <p style="display:block;color:var(--muted)">This subdomain was claimed with a pull request to
+      <a href="https://github.com/chaosberlin/chaosberlin">chaosberlin/chaosberlin</a>. Want your own
+      <b class="g">&lt;name&gt;.chaos.berlin</b>? Open one too.</p>
+  </div>
+</main>
+</body>
+</html>
